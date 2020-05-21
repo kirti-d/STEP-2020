@@ -1,18 +1,95 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
-    </div>
-  </body>
+
+<head>
+    <!--info for browser -->
+	<meta charset="UTF-8">
+    <meta name="keywords" content="HTML, CSS, JavaScript, portfolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/dp.jpeg"/>
+    <!-- title -->
+	<title>My Portfolio</title>
+
+    <!-- add css -->
+	<link rel="stylesheet" href="style.css">
+    <!-- add javascript -->
+	<script src="script.js"></script>
+    <!-- add fontawesome icons -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+		integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- header -->
+    <header id="body-header">
+        <!-- navigate to different sections of page -->
+        <nav>
+
+            <ul class="horizontal-list text-center nav-menu">
+                <li>
+                    <a href="#"> Home </a>
+                </li>
+                <li>
+                    <a href="#about"> About </a>
+                </li>
+                <li>
+                    <a href="#skills"> Skills </a>
+                </li>
+                <li>
+                    <a href="#experience">Experience</a>
+                </li>
+                <li>
+                    <a href="#education">Education</a>
+                </li>
+            </ul>
+            <ul class="horizontal-list text-center">
+                    <li>
+                            <a href="#contact">Contact</a>
+                    </li>
+            </ul>
+
+        </nav>
+        <!-- navigate to different sections of page -->
+
+        <!-- links to socialmedia accounts -->
+        <div id="name-social-container">
+            <!-- name -->
+            <div class="text-center">
+                <h1 id="my-name">KIRTI DABAS</h1>
+            </div>
+
+            <!-- social media platforms -->
+            <div>
+                <ul class="horizontal-list text-center social-icons">
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-stack-overflow"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-quora"></i>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- social media platforms -->
+        </div>
+        <!-- links to socialmedia accounts -->
+    </header>
+    <!-- header -->
+</body>
+
 </html>
