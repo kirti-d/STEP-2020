@@ -266,4 +266,51 @@ display:block;
     color: grey;
     line-height: 20px;
 }
+/* experience section */
+.scene {
+  width: 600px;
+  height: 600px;
+  border: 1px solid #CCC;
+  margin: 80px;
+  perspective: 400px;
+}
 
+.cube {
+  width: 600px;
+  height: 600px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  transition: transform 1s;
+}
+
+.cube.show-0  { transform: translateZ(-300px) rotateY(   0deg); }
+.cube.show-1  { transform: translateZ(-300px) rotateY( -90deg); }
+.cube.show-2   { transform: translateZ(-300px) rotateY(-180deg); }
+.cube.show-3   { transform: translateZ(-300px) rotateY(  90deg); }
+.cube.show-4    { transform: translateZ(-300px) rotateX( -90deg); }
+.cube.show-5 { transform: translateZ(-300px) rotateX(  90deg); }
+
+.face {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  line-height: 200px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.front  { transform: rotateY(  0deg) translateZ(300px); }
+.cube_right  { transform: rotateY( 90deg) translateZ(300px); }
+.back   { transform: rotateY(180deg) translateZ(300px); }
+.left   { transform: rotateY(-90deg) translateZ(300px); }
+.top    { transform: rotateX( 90deg) translateZ(300px); }
+.bottom { transform: rotateX(-90deg) translateZ(300px); }
+
+#next{
+    height:3vh;
+    width:5vw;
+    border-radius:5px;
+}
