@@ -35,9 +35,6 @@ horizontal-list {
     border-bottom: 1px solid black;
 }
 
-.text-center {
-    text-align: center;
-}
 
 /* Name and Social Icons*/
 
@@ -94,4 +91,96 @@ horizontal-list {
     color: grey;
     font-size: 1.1rem;
     margin: auto;
+}
+
+/*common classes */
+
+.text-highlight {
+    color: #2857a4;
+    font-weight: 600;
+
+}
+.text-center {
+    text-align: center;
+}
+.shadow{
+	box-shadow:0px 0px 8px black;
+}
+
+/* section */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.section-heading {
+    width: auto;
+    padding: 20px 10px 10px;
+    font-weight: 400;
+    font-size:3rem;
+}
+
+section:nth-child(2n) {
+    background-color: #9e9b9b29;
+}
+
+section:nth-child(2n + 1) {
+    background-color: white;
+}
+
+
+/* Common Margin Classes */
+
+.m0 {
+    margin: 0;
+}
+
+.mb75px {
+    margin-bottom: 75px;
+}
+
+.mb50px {
+    margin-bottom: 50px;
+}
+
+
+/* image slider */
+
+#slide-container{
+height:50vh;
+width:50vw;
+border-radius:4vh;
+}
+#slide-container div img{
+    height:50vh;
+    width:50vw;
+    border-radius:4vh;
+}
+#img1,#img2,#img3{
+opacity:0;
+width:50vw;
+height:50vh;
+position:absolute;
+transition:2s;
+}
+#img1:target{
+opacity:1;
+border-radius:4vh;
+display:block;
+}
+#img2:target{
+opacity:1;
+border-radius:4vh;
+display:block;
+}
+#img3:target{
+opacity:1;
+border-radius:4vh;
+display:block;
+}
+#nevigator li a{
+    color: black;
+    size:2rem;
+    background-color:black;
 }
