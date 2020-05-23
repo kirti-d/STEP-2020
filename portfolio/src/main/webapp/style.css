@@ -311,7 +311,7 @@ display:block;
 .top    { transform: rotateX( 90deg) translateZ(300px); }
 .bottom { transform: rotateX(-90deg) translateZ(300px); }
 
-#next{
+.next{
     height:10vh;
     width:20vw;
     border-radius:5vh;

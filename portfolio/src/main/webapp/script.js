@@ -34,6 +34,8 @@ changeSide();
 
 nextButton.addEventListener( 'click', changeSide );
 
+// vertical scroll
+
 for (var i = 0; i < navMenuAnchorTags.length; i++) {
     navMenuAnchorTags[i].addEventListener('click', function (event) {
         event.preventDefault();
@@ -55,6 +57,7 @@ function scrollVertically(targetSection) {
     }
     window.scrollBy(0, 50);
 }
+
 
 
 
