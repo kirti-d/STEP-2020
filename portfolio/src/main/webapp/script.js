@@ -40,9 +40,7 @@ for (var i = 0; i < navMenuAnchorTags.length; i++) {
         var targetSectionID = this.textContent.trim().toLowerCase();
         console.log(this.textContent);
         var targetSection = document.getElementById(targetSectionID);
-        console.log(targetSection);
-        //    interval = setInterval(scrollVertically, 20, targetSection);
-
+        console.log(targetSectionID);
         interval = setInterval(function () {
             scrollVertically(targetSection);
         }, 20);
