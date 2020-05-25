@@ -240,6 +240,7 @@ display:block;
 #timeline-divider .timeline-traveller {
     position: sticky;
     top: 135px;
+    font-size:3rem;
     z-index: 2;
 }
 

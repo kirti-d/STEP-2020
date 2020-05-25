@@ -1,16 +1,17 @@
 
-// async await function to fetch message 
+// async await function to add comments to the page DOM 
 async function fetchMessage() {
   const response = await fetch('/addComment');
   const message = await response.json();
-    console.log(message);
-  var container=document.getElementById('msg');
-  for(var i=0;i<message.commentList.length;i++){
+  const container=document.getElementById('msg');
+  console.log(message);
+  message.forEach((comment)=>{
     container.appendChild(
-        createListElement( message.commentList[i]));}
+    createListElement(comment));
+  })
 }
-function createListElement(text) {
+function createListElement(comment) {
   const liElement = document.createElement('li');
-  liElement.innerText = text;
+  liElement.innerText = comment.text;
   return liElement;
 }

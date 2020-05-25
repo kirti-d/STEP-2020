@@ -2,8 +2,9 @@
 package com.google.sps.servlets;
 
 import java.util.*;
-import com.google.sps.data.comments;
 import java.io.IOException;
+import com.google.sps.data.comment;
+import com.google.appengine.api.datastore.*;
 import com.google.gson.Gson;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,8 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/addComment")
 public final class addComment extends HttpServlet {
     
-    public comments List=new comments();
-
+    // respond to post request by redirecting to index.html
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         
@@ -24,16 +24,30 @@ public final class addComment extends HttpServlet {
             response.getWriter().println("please enter a valid comment");
             return;
         }
-        
-        List.commentList.add(comment);
+        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+        Entity commentEntity = new Entity("comment");
+        commentEntity.setProperty("text", comment);
+        datastore.put(commentEntity);
         response.sendRedirect("/index.html");
     }
+
+    // respond to get request by returning json
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String json = convertToJson(List);
+     ArrayList<comment>commentList=new ArrayList();
+        Query query = new Query("comment");
+        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+        PreparedQuery results = datastore.prepare(query);
+        for (Entity entity : results.asIterable()) {
+            long id = entity.getKey().getId();
+            String text = (String) entity.getProperty("text");
+            commentList.add(new comment(text,id));
+        }
+        String json = convertToJson(commentList);
         response.setContentType("application/json");
         response.getWriter().println(json);
     }
-    private String convertToJson(comments list) {
+    // return json string of java object
+    private String convertToJson(ArrayList<comment> list) {
         Gson gson = new Gson();
         String json = gson.toJson(list);
         return json;
