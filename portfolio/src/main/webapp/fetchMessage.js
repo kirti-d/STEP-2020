@@ -1,16 +1,13 @@
 
 // async await function to fetch message 
 async function fetchMessage() {
-  const response = await fetch('/fetchMessage');
+  const response = await fetch('/addComment');
   const message = await response.json();
+    console.log(message);
   var container=document.getElementById('msg');
-  container.innerHTML = '';
+  for(var i=0;i<message.commentList.length;i++){
     container.appendChild(
-        createListElement('Message 1: ' + message.commentList[0]));
-    container.appendChild(
-        createListElement('Message 2: ' + message.commentList[1]));
-    container.appendChild(
-        createListElement('Message 3: ' + message.commentList[2]));
+        createListElement( message.commentList[i]));}
 }
 function createListElement(text) {
   const liElement = document.createElement('li');

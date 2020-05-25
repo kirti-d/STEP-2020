@@ -18,7 +18,7 @@
 		integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 
-<body>
+<body onload="fetchMessage()">
 	<!-- header -->
 	<header id="body-header">
 		<!-- navigate to different sections of page -->
@@ -232,8 +232,11 @@
 		</section>
 		<!-- learning fetch -->
 		<section>
-
-			<button class="next" onclick='fetchMessage()'>fetch</button>
+            <form method="post" action="/addComment">
+                <input name="comment"></input>
+                <button class="next" type="submit" >add</button>
+            </form>
+			
 			<div id="msg"></div>
 
 		</section>
