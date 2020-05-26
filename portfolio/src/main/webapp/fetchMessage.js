@@ -19,11 +19,13 @@ async function fetchMessage() {
 function createListElement(comment) {
 
     const liElement = document.createElement('li');
+    liElement.className = 'comment';
 
     const text=document.createElement('span');
     text.innerText = comment.text;
 
     const deleteButton=document.createElement('button');
+    deleteButton.innerText="Delete";
     deleteButton.addEventListener('click', () => {
         // remove comment from datastore
         deleteComment(comment);
