@@ -15,8 +15,30 @@ async function fetchMessage() {
   })
 }
 
+// function for creating li element for comment
 function createListElement(comment) {
-  const liElement = document.createElement('li');
-  liElement.innerText = comment.text;
-  return liElement;
+
+    const liElement = document.createElement('li');
+
+    const text=document.createElement('span');
+    text.innerText = comment.text;
+
+    const deleteButton=document.createElement('button');
+    deleteButton.addEventListener('click', () => {
+        // remove comment from datastore
+        deleteComment(comment);
+        // Remove the comment from the DOM.
+        liElement.remove();
+    });
+
+    liElement.appendChild(text);
+    liElement.appendChild(deleteButton);
+    return liElement;
+}
+
+// function for deleting comment 
+function deleteComment(comment) {
+  const params = new URLSearchParams();
+  params.append('id', comment.id);
+  fetch('/deleteComment', {method: 'POST', body: params});
 }

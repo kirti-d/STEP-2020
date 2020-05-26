@@ -157,6 +157,9 @@ section:nth-child(2n + 1) {
 .mb50px {
     margin-bottom: 50px;
 }
+.mb50pxtop{
+    margin-top: 50px;
+}
 
 
 /* image slider */
