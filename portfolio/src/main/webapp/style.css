@@ -157,6 +157,9 @@ section:nth-child(2n + 1) {
 .mb50px {
     margin-bottom: 50px;
 }
+.mb50pxtop{
+    margin-top: 50px;
+}
 
 
 /* image slider */
@@ -240,6 +243,7 @@ display:block;
 #timeline-divider .timeline-traveller {
     position: sticky;
     top: 135px;
+    font-size:3rem;
     z-index: 2;
 }
 
@@ -319,4 +323,22 @@ display:block;
     color:white;
     font-size:1.5rem;
     font-weight: bold;
+}
+/* comments */
+.comment{
+    height:10vh;
+    padding: 2vh;
+    margin-top:2vh;
+    width:20vw;
+    list-style: none;
+}
+.comment span{
+    font-size:2rem;
+    padding:1vh;
+}
+.comment button{
+    height:5vh;
+    width:10vw;
+    padding:1vh;
+    font-size:2rem;
 }
