@@ -342,3 +342,12 @@ display:block;
     padding:1vh;
     font-size:2rem;
 }
+/* authentication */
+.show{
+position:relative;
+opacity:1;
+}
+.hide{
+position:relative;
+opacity:0;
+}

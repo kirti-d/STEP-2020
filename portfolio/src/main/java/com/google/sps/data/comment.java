@@ -2,11 +2,15 @@ package com.google.sps.data;
 
 import java.util.*;
 
-public class comment{
-    String text;
-    long id;
-    public comment(String text,long id){
-        this.text=text;
-        this.id=id;
-    }
+// class for comment related info
+public class comment {
+  String text;
+  long id;
+  String user;
+
+  public comment(String text, long id, String user) {
+    this.text = text;
+    this.id = id;
+    this.user = user;
+  }
 }

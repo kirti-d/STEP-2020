@@ -18,7 +18,7 @@
 		integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 
-<body onload="fetchMessage()">
+<body onload="checkAuth()">
 	<!-- header -->
 	<header id="body-header">
 		<!-- navigate to different sections of page -->
@@ -230,21 +230,40 @@
 			<button id="next" class="next" class="m-blue ">click</button>
 			<!-- button to change the view -->
 		</section>
-		<!-- learning fetch -->
+		<!-- comments and login -->
 		<section class="mb50pxtop">
-            <form>
-                <input id="commentNo" value="5" type="number" min="0" max="100000"></input>
-            </form>
-             <button onclick="fetchMessage()">change</button>
-            <form method="post" action="/addComment">
-                <input name="comment"></input>
-                <button class="next" type="submit" >add</button>
-            </form>
-			
+			<!-- choose no of comments you want to see -->
+			<form>
+				<input id="commentNo" value="5" type="number" min="0" max="100000"></input>
+			</form>
+			<button onclick="fetchMessage()">change</button>
+			<!-- choose no of comments you want to see -->
+
+
+			<div>
+				<!-- add comments form -->
+				<form id="addComment" class="hide" method="post" action="/addComment">
+					<input name="comment"></input>
+					<button class="next" type="submit" >add</button>
+				</form>
+				<!-- add comments form -->
+				<!-- logout form-->
+				<form id="logout" class="hide" method="post" action="/logout">
+					<button class="next" type="submit" >logout</button>
+				</form>
+				<!-- logout form-->
+				<!-- login form-->
+				<form id="authenticate" class="hide" method="post" action="/authenticate">
+					<button class="next" type="submit" >authenticate</button>
+				</form>
+				<!-- login form-->
+			</div>
+
+			<!-- show comments -->
 			<ul id="msg"></ul>
 
 		</section>
-		<!-- learning fetch -->
+		<!-- comments and login -->
 	</main>
 	<!-- main -->
 	<!-- add javascript -->
