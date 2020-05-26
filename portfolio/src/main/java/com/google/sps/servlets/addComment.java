@@ -34,13 +34,18 @@ public final class addComment extends HttpServlet {
     // respond to get request by returning json
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
      ArrayList<comment>commentList=new ArrayList();
+     int totalComments=Integer.parseInt(request.getParameter("totalComments"));
         Query query = new Query("comment");
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         PreparedQuery results = datastore.prepare(query);
+        int count=0;
         for (Entity entity : results.asIterable()) {
+            if(count>=totalComments)
+            break;
             long id = entity.getKey().getId();
             String text = (String) entity.getProperty("text");
             commentList.add(new comment(text,id));
+            count++;
         }
         String json = convertToJson(commentList);
         response.setContentType("application/json");

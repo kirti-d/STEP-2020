@@ -232,6 +232,10 @@
 		</section>
 		<!-- learning fetch -->
 		<section>
+            <form>
+                <input id="commentNo" value="5" type="number" min="0" max="100000"></input>
+            </form>
+             <button onclick="fetchMessage()">change</button>
             <form method="post" action="/addComment">
                 <input name="comment"></input>
                 <button class="next" type="submit" >add</button>
