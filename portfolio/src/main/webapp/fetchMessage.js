@@ -26,7 +26,6 @@ async function fetchMessage() {
     var value=totalComments.value;
   const response = await fetch('/addComment?totalComments='+value);
   const message = await response.json();
-    // totalComments.value=value;
   const container=document.getElementById('msg');
   container.innerHTML="";
   message.forEach((comment)=>{
@@ -47,7 +46,9 @@ function createListElement(comment) {
     const userName=document.createElement('span');
     userName.innerText = comment.user;
 
-    console.log(comment.text+" "+comment.userName);
+    const image=document.createElement('img');
+    image.src = comment.image;
+
     const deleteButton=document.createElement('button');
     deleteButton.innerText="Delete";
     deleteButton.addEventListener('click', () => {
@@ -58,6 +59,7 @@ function createListElement(comment) {
     });
 
     liElement.appendChild(text);
+    liElement.appendChild(image);
     liElement.appendChild(userName);
     liElement.appendChild(deleteButton);
     return liElement;
