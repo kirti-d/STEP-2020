@@ -1,5 +1,3 @@
-
-
 <!-- jsp file for comments -->
 <%@ page import="com.google.appengine.api.blobstore.BlobstoreService" %>
 <%@ page import="com.google.appengine.api.blobstore.BlobstoreServiceFactory" %>
@@ -13,7 +11,7 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 
-<body  onload="checkAuth()">
+<body onload="checkAuth()">
 	<!-- comments and login -->
 	<section class="mb50pxtop">
 		<!-- choose no of comments you want to see -->
@@ -28,7 +26,7 @@
 			<!-- add comments form -->
 			<form id="addComment" class="hide" method="post" enctype="multipart/form-data" action="<%= uploadUrl %>">
 				<input name="comment"></input>
-                <input name="image" type="file"></input>
+				<input name="image" type="file"></input>
 				<button class="next" type="submit" >add</button>
 			</form>
 			<!-- add comments form -->

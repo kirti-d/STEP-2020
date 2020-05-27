@@ -46,9 +46,9 @@ function createListElement(comment) {
     const userName=document.createElement('span');
     userName.innerText = comment.user;
 
+    const div=document.createElement('div');
     const image=document.createElement('img');
     image.src = comment.image;
-
     const deleteButton=document.createElement('button');
     deleteButton.innerText="Delete";
     deleteButton.addEventListener('click', () => {
@@ -57,9 +57,9 @@ function createListElement(comment) {
         // Remove the comment from the DOM.
         liElement.remove();
     });
-
+    div.appendChild(image);
     liElement.appendChild(text);
-    liElement.appendChild(image);
+    liElement.appendChild(div);
     liElement.appendChild(userName);
     liElement.appendChild(deleteButton);
     return liElement;
