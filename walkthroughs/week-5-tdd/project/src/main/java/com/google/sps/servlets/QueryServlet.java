@@ -43,7 +43,6 @@ public class QueryServlet extends HttpServlet {
 
     // Convert the times to JSON
     String jsonResponse = gson.toJson(answer);
-
     // Send the JSON back as the response
     response.setContentType("application/json");
     response.getWriter().println(jsonResponse);
