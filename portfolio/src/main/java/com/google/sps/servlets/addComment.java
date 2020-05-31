@@ -24,6 +24,12 @@ public final class addComment extends HttpServlet {
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response)
     throws IOException {
+    UserService userService = UserServiceFactory.getUserService();
+
+    // if the user is not authenticated don't let him add anything
+    if (!userService.isUserLoggedIn()) {
+      return;
+    }
     String comment = request.getParameter("comment");
     if (comment == null || comment.length() == 0) {
       response.setContentType("text/html;");
@@ -31,7 +37,6 @@ public final class addComment extends HttpServlet {
       return;
     }
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-    UserService userService = UserServiceFactory.getUserService();
 
     String id = userService.getCurrentUser().getUserId();
     String imageUrl = getUploadedFileUrl(request, "image");
