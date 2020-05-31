@@ -247,12 +247,22 @@
 			</div>
 		</section>
 		<!-- add chart to show data -->
+		<!-- add map to show college location -->
+		<section id="mapContainer">
+			<h3 class="text-highlight section-heading mb75px">College Location</h3>
+			<!--The div element for the map -->
+			<div id="map"></div>
+		</section>
+		<!-- add map to show college location -->
 	</main>
 	<!-- main -->
 	<!-- add javascript -->
 	<script src="script.js"></script>
 	<script src="https://www.gstatic.com/charts/loader.js"></script>
-	<script src="fetchChart.js"></script>
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAokgAC2C1lLyfRk-d7jLLwnJfy8N9cW_c&callback=initMap">
+	</script>
+	<script src="fetchChartMap.js"></script>
 </body>
 
 </html>

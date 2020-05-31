@@ -24,3 +24,14 @@ function drawChart() {
     chart.draw(data, options);
   });
 }
+
+// loads map 
+function initMap() {
+  // The location of college
+  var college = {lat: 28.751348, lng: 77.118107};
+  // The map, centered at college
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 8, center: college});
+  // The marker, positioned at DTU(college)
+  var marker = new google.maps.Marker({position: college,label:'DTU', map: map});
+}

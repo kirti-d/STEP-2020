@@ -54,8 +54,6 @@ function createListElement(comment) {
     deleteButton.addEventListener('click', () => {
         // remove comment from datastore
         deleteComment(comment);
-        // Remove the comment from the DOM.
-        liElement.remove();
     });
     div.appendChild(image);
     liElement.appendChild(text);
@@ -70,4 +68,5 @@ function deleteComment(comment) {
   const params = new URLSearchParams();
   params.append('id', comment.id);
   fetch('/deleteComment', {method: 'POST', body: params});
+    window.location.href = "/comments.jsp";
 }
