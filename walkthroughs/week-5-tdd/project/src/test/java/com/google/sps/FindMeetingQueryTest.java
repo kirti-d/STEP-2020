@@ -274,6 +274,11 @@ public final class FindMeetingQueryTest {
     Assert.assertEquals(expected, actual);
   }
 //   tests for optional attendees
+
+   // Event  :         |-----A-|
+   // Event  :   |---------C--------------|
+    // Day     : |------------------------|
+    // Options : |------------------------|
   @Test
   public void noOptionalAttendeeFree() {
     
@@ -287,6 +292,10 @@ public final class FindMeetingQueryTest {
 
     Assert.assertEquals(expected, actual);
   }     
+
+  // Events  :         |--A,B--|
+    // Day     : |------------------------|
+    // Options : 
    @Test
   public void AllOptionalAttendeeFree() {
     
@@ -300,6 +309,9 @@ public final class FindMeetingQueryTest {
     Assert.assertEquals(expected, actual);
   }      
 
+    // Events  :     |-A.B-| |----B,C-----|
+    // Day     : |------------------------|
+    // Options : |---|   
    public void differentNoOfOptionalAttendeeFree() {
 
     Collection<Event> events = Arrays.asList(new Event("Event 1",
@@ -313,9 +325,11 @@ public final class FindMeetingQueryTest {
 
     Assert.assertEquals(expected, actual);
    }    
-
+    // Events  : |--A---|   |----B,C-------|
+    // Event   : |----B---|
+    // Day     : |------------------------|
+    // Options :        |---| 
     public void AptSlotSize() {
-
     Collection<Event> events = Arrays.asList(new Event("Event 1",
         TimeRange.fromStartDuration(TIME_0000AM, 540), Arrays.asList(PERSON_A)),new Event("Event 2",
         TimeRange.fromStartDuration(TIME_0000AM, 570), Arrays.asList(PERSON_B)),new Event("Event 3",

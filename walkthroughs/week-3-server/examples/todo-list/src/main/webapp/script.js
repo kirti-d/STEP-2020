@@ -16,6 +16,7 @@
 function loadTasks() {
   fetch('/list-tasks').then(response => response.json()).then((tasks) => {
     const taskListElement = document.getElementById('task-list');
+    console.log(tasks);
     tasks.forEach((task) => {
       taskListElement.appendChild(createTaskElement(task));
     })
