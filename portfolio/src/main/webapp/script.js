@@ -12,52 +12,48 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-var cube = document.getElementById("cube");
-var nextButton= document.getElementById("next");
-var currentClass = '';
-var idx=0;
-var navMenuAnchorTags = document.querySelectorAll('.nav-menu a');
-var interval;
+const cube = document.getElementById("cube");
+const nextButton = document.getElementById("next");
+const currentClass = '';
+const idx = 0;
+const navMenuAnchorTags = document.querySelectorAll('.nav-menu a');
+const interval;
 
 // chane the side of cube on click
 function changeSide() {
-  var showClass = 'show-' + idx;
-  if ( currentClass ) {
-    cube.classList.remove( currentClass );
-  }
-  cube.classList.add( showClass );
-  currentClass = showClass;
-  idx=(idx+1)%6;
+    const showClass = 'show-' + idx;
+    if (currentClass) {
+        cube.classList.remove(currentClass);
+    }
+    cube.classList.add(showClass);
+    currentClass = showClass;
+    idx = (idx + 1) % 6;
 }
 // set initial side
 changeSide();
 
-nextButton.addEventListener( 'click', changeSide );
+nextButton.addEventListener('click', changeSide);
 
 // vertical scroll
 
-for (var i = 0; i < navMenuAnchorTags.length; i++) {
-    navMenuAnchorTags[i].addEventListener('click', function (event) {
+for (const i = 0; i < navMenuAnchorTags.length; i++) {
+    navMenuAnchorTags[i].addEventListener('click', function(event) {
         event.preventDefault();
-        var targetSectionID = this.textContent.trim().toLowerCase();
+        const targetSectionID = this.textContent.trim().toLowerCase();
         console.log(this.textContent);
-        var targetSection = document.getElementById(targetSectionID);
+        const targetSection = document.getElementById(targetSectionID);
         console.log(targetSectionID);
-        interval = setInterval(function () {
+        interval = setInterval(function() {
             scrollVertically(targetSection);
         }, 20);
     });
 }
 
 function scrollVertically(targetSection) {
-    var targetSectionCoordinates = targetSection.getBoundingClientRect();
+    const targetSectionCoordinates = targetSection.getBoundingClientRect();
     if (targetSectionCoordinates.top <= 0) {
         clearInterval(interval);
         return;
     }
     window.scrollBy(0, 50);
 }
-
-
-
-
