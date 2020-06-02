@@ -326,7 +326,6 @@ display:block;
 }
 /* comments */
 .comment{
-    height:10vh;
     padding: 2vh;
     margin-top:2vh;
     width:20vw;
@@ -341,4 +340,13 @@ display:block;
     width:10vw;
     padding:1vh;
     font-size:2rem;
+}
+/* authentication */
+.show{
+position:relative;
+opacity:1;
+}
+.hide{
+position:relative;
+opacity:0;
 }

@@ -19,7 +19,7 @@
 		integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 
-<body onload="fetchMessage()">
+<body>
 	<!-- header -->
 	<header id="body-header">
 		<!-- navigate to different sections of page -->
@@ -231,26 +231,29 @@
 			<button id="next" class="next" class="m-blue ">click</button>
 			<!-- button to change the view -->
 		</section>
-		<!-- learning fetch -->
-		<section class="mb50pxtop">
-            <form>
-                <input id="commentNo" value="5" type="number" min="0" max="100000"></input>
-            </form>
-             <button onclick="fetchMessage()">change</button>
-            <form method="post" action="/addComment">
-                <input name="comment"></input>
-                <button class="next" type="submit" >add</button>
-            </form>
-			
-			<ul id="msg"></ul>
+		<!-- add chart to show data  -->
+		<section id="chart">
+			<p>which section did you like the most</p>
+			<form action="/chart" method="POST">
+				<select name="section">
+                    <option value="about">About</option>
+                    <option value="interests">Interests</option>
+                    <option value="experience">Experience</option>
+                    <option value="projects">Projects</option>
+                </select>
+				<button>Submit</button>
+			</form>
+			<div id="chart-container">
 
+			</div>
 		</section>
-		<!-- learning fetch -->
+		<!-- add chart to show data -->
 	</main>
 	<!-- main -->
 	<!-- add javascript -->
 	<script src="script.js"></script>
-	<script src="fetchMessage.js"></script>
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="fetchChart.js"></script>
 </body>
 
 </html>
